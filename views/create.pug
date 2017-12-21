@@ -1,0 +1,13 @@
+extends layouts/layout.pug
+
+block content
+    .card
+        .card-block
+            form(action="/quotes/create" method="POST")
+                .form-group
+                    label(for="quote-body") Citazione
+                    textarea#quote-body(name="quote-body" placeholder="La tua citazione").form-control
+                .form-group
+                    label(for="quote-author") Autore
+                    input#quote-author(type="text" name="quote-author" placeholder="Autore").form-control
+                button(type="submit").btn.btn-primary Invia

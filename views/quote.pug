@@ -1,0 +1,18 @@
+extends layouts/layout.pug
+
+block content
+    .quote
+        h3.body= quote.body
+        h4.author= quote.author
+        p.permalink
+            span Condividi:
+            small.link= url(`/quotes/${quote.uuid}`)
+            i(aria-hidden="true")#quote-to-clipboard.fa.fa-clipboard.quoter-icon-button
+            
+
+append scripts
+    
+    if autoUpdate
+        script(src="../js/autoupdate.js")
+        
+    script(src="../js/quote.js")
