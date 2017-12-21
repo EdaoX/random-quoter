@@ -84,7 +84,7 @@ const createQuoteManager = () => {
 
         return new Promise( (resolve, reject ) => {
 
-            quotesDB.find({}).exec( ( err, quotes ) => {
+            quotesDB.find({}).sort({ created_on : 1 }).exec( ( err, quotes ) => {
 
                 if(!err)
                     resolve( quotes.reduce( (txt,  quote) => txt + makeLine( quote ), '' ) )
