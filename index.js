@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const helmet = require('helmet');
 require('express-async-errors');
 const config = require('./config/config');
 
@@ -13,6 +14,7 @@ const quotes = require('./routes/quotes');
 const api = require('./routes/api');
 
 const app = express();
+app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true}));
 app.use(express.static('public'));
