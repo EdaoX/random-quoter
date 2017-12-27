@@ -27,6 +27,4 @@ app.use('/api', api);
 app.use('/webhook', webhook);
 app.use('/quotes', quotes);
 
-app.listen( config.PORT , function () {
-  console.log(`Example app listening on port ${config.PORT}!`);
-});
+app.listen( config.PORT , () => console.log(`App listening on port ${config.PORT}!`) );
